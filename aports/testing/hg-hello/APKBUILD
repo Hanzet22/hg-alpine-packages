@@ -1,0 +1,17 @@
+# Maintainer: Farhan <farhanzet4@gmail.com>
+
+pkgname=hg-hello
+pkgver=1.0.0
+pkgrel=0
+pkgdesc="Hello-world utility from HG Alpine Packages"
+url="https://github.com/Hanzet22"
+arch="noarch"
+license="GPL-3.0-only"
+options="!check"
+
+package() {
+    install -Dm755 /dev/stdin "$pkgdir/usr/bin/hg-hello" <<'SCRIPT'
+#!/bin/sh
+printf '%s\n' 'Hello from HG Alpine Packages!'
+SCRIPT
+}
